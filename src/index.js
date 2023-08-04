@@ -17,6 +17,9 @@ module.exports = function toReadable (number) {
     
             newArr[newArr.length-2] === 0 ? 
             readableNumber = `${m1_10[newArr[0]]} ${m100[0]}` : 
+
+            newArr[newArr.length-2] === 1 ?
+            readableNumber = `${m1_10[newArr[0]]} ${m100[0]} ${m1_10[`${newArr[1]}${newArr[2]}`]}`:
             readableNumber = `${m1_10[newArr[0]]} ${m100[0]} ${m20_90[newArr[1]-2]}` : 
     
             newArr[newArr.length-2] === 0 ? 
@@ -26,6 +29,6 @@ module.exports = function toReadable (number) {
               readableNumber = `${m1_10[newArr[0]]} ${m100[0]} ${m1_10[`${newArr[1]}${newArr[2]}`]}`:
               readableNumber = `${m1_10[newArr[0]]} ${m100[0]} ${m20_90[newArr[1]-2]} ${m1_10[newArr[newArr.length-1]]}`;
           }
-          
+
         return readableNumber;
 }
